@@ -1,6 +1,5 @@
 package Indy110Net;
 
-{$ALIGN 0}
 {$BOOLEVAL OFF}
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
@@ -21,9 +20,9 @@ package Indy110Net;
 {$IMPLICITBUILD ON}
 
 requires
-  Borland.Delphi,
-  Borland.Vcl,
-  Borland.VclRtl;
+
+  Vcl;
+
 
 contains
   IdASN1Util in 'Protocols\IdASN1Util.pas',

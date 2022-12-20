@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{ea93089c-b89e-4c1e-b727-db516748401a}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="..\Meister2000\Meister.dproj" />
+    <Projects Include="Lib\Core\dclIndyCore100.dproj" />
+    <Projects Include="Lib\Core\IndyCore100.dproj" />
+    <Projects Include="Lib\Protocols\dclIndyProtocols100.dproj" />
+    <Projects Include="Lib\Protocols\IndyProtocols100.dproj" />
+    <Projects Include="Lib\System\IndySystem100.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="IndySystem100">
+    <MSBuild Projects="Lib\System\IndySystem100.dproj" Targets="" />
+  </Target>
+  <Target Name="IndySystem100:Clean">
+    <MSBuild Projects="Lib\System\IndySystem100.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="IndySystem100:Make">
+    <MSBuild Projects="Lib\System\IndySystem100.dproj" Targets="Make" />
+  </Target>
+  <Target Name="IndyCore100">
+    <MSBuild Projects="Lib\Core\IndyCore100.dproj" Targets="" />
+  </Target>
+  <Target Name="IndyCore100:Clean">
+    <MSBuild Projects="Lib\Core\IndyCore100.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="IndyCore100:Make">
+    <MSBuild Projects="Lib\Core\IndyCore100.dproj" Targets="Make" />
+  </Target>
+  <Target Name="IndyProtocols100">
+    <MSBuild Projects="Lib\Protocols\IndyProtocols100.dproj" Targets="" />
+  </Target>
+  <Target Name="IndyProtocols100:Clean">
+    <MSBuild Projects="Lib\Protocols\IndyProtocols100.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="IndyProtocols100:Make">
+    <MSBuild Projects="Lib\Protocols\IndyProtocols100.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dclIndyCore100">
+    <MSBuild Projects="Lib\Core\dclIndyCore100.dproj" Targets="" />
+  </Target>
+  <Target Name="dclIndyCore100:Clean">
+    <MSBuild Projects="Lib\Core\dclIndyCore100.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dclIndyCore100:Make">
+    <MSBuild Projects="Lib\Core\dclIndyCore100.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dclIndyProtocols100">
+    <MSBuild Projects="Lib\Protocols\dclIndyProtocols100.dproj" Targets="" />
+  </Target>
+  <Target Name="dclIndyProtocols100:Clean">
+    <MSBuild Projects="Lib\Protocols\dclIndyProtocols100.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dclIndyProtocols100:Make">
+    <MSBuild Projects="Lib\Protocols\dclIndyProtocols100.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Meister">
+    <MSBuild Projects="..\Meister2000\Meister.dproj" Targets="" />
+  </Target>
+  <Target Name="Meister:Clean">
+    <MSBuild Projects="..\Meister2000\Meister.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Meister:Make">
+    <MSBuild Projects="..\Meister2000\Meister.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="IndySystem100;IndyCore100;IndyProtocols100;dclIndyCore100;dclIndyProtocols100;Meister" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="IndySystem100:Clean;IndyCore100:Clean;IndyProtocols100:Clean;dclIndyCore100:Clean;dclIndyProtocols100:Clean;Meister:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="IndySystem100:Make;IndyCore100:Make;IndyProtocols100:Make;dclIndyCore100:Make;dclIndyProtocols100:Make;Meister:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>
